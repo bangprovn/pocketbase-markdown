@@ -20,6 +20,11 @@
             icon: CommonHelper.getFieldTypeIcon("editor"),
         },
         {
+            label: "Markdown",
+            value: "markdown",
+            icon: CommonHelper.getFieldTypeIcon("markdown"),
+        },
+        {
             label: "Number",
             value: "number",
             icon: CommonHelper.getFieldTypeIcon("number"),

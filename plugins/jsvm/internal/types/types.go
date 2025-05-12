@@ -412,6 +412,16 @@ declare class EditorField implements core.EditorField {
   constructor(data?: Partial<core.EditorField>)
 }
 
+interface MarkdownField extends core.MarkdownField{} // merge
+/**
+ * {@inheritDoc core.MarkdownField}
+ *
+ * @group PocketBase
+ */
+declare class MarkdownField implements core.MarkdownField {
+  constructor(data?: Partial<core.MarkdownField>)
+}
+
 interface PasswordField extends core.PasswordField{} // merge
 /**
  * {@inheritDoc core.PasswordField}

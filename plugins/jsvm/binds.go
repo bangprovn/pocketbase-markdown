@@ -467,6 +467,10 @@ func baseBinds(vm *goja.Runtime) {
 		instance := &core.EditorField{}
 		return structConstructorUnmarshal(vm, call, instance)
 	})
+	vm.Set("MarkdownField", func(call goja.ConstructorCall) *goja.Object {
+		instance := &core.MarkdownField{}
+		return structConstructorUnmarshal(vm, call, instance)
+	})
 	vm.Set("PasswordField", func(call goja.ConstructorCall) *goja.Object {
 		instance := &core.PasswordField{}
 		return structConstructorUnmarshal(vm, call, instance)

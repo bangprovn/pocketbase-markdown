@@ -6,6 +6,7 @@
     import SchemaFieldBool from "@/components/collections/schema/SchemaFieldBool.svelte";
     import SchemaFieldDate from "@/components/collections/schema/SchemaFieldDate.svelte";
     import SchemaFieldEditor from "@/components/collections/schema/SchemaFieldEditor.svelte";
+    import SchemaFieldMarkdown from "@/components/collections/schema/SchemaFieldMarkdown.svelte";
     import SchemaFieldEmail from "@/components/collections/schema/SchemaFieldEmail.svelte";
     import SchemaFieldFile from "@/components/collections/schema/SchemaFieldFile.svelte";
     import SchemaFieldJson from "@/components/collections/schema/SchemaFieldJson.svelte";
@@ -31,6 +32,7 @@
         email: SchemaFieldEmail,
         url: SchemaFieldUrl,
         editor: SchemaFieldEditor,
+        markdown: SchemaFieldMarkdown,
         date: SchemaFieldDate,
         select: SchemaFieldSelect,
         json: SchemaFieldJson,

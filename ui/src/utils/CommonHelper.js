@@ -22,7 +22,7 @@ const documentExtensions = [
 
 const arraybleFields = ["relation", "file", "select"]
 
-const stringFields = ["text", "email", "url", "editor"]
+const stringFields = ["text", "email", "url", "editor", "markdown"]
 
 export const logLevels = [
     // {
@@ -1180,6 +1180,8 @@ export default class CommonHelper {
                 return "ri-link";
             case "editor":
                 return "ri-edit-2-line";
+            case "markdown":
+                return "ri-markdown-line";
             case "select":
                 return "ri-list-check";
             case "json":

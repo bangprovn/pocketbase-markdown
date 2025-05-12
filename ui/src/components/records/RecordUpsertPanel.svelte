@@ -14,6 +14,7 @@
     import BoolField from "@/components/records/fields/BoolField.svelte";
     import DateField from "@/components/records/fields/DateField.svelte";
     import EditorField from "@/components/records/fields/EditorField.svelte";
+    import MarkdownField from "@/components/records/fields/MarkdownField.svelte";
     import EmailField from "@/components/records/fields/EmailField.svelte";
     import FileField from "@/components/records/fields/FileField.svelte";
     import JsonField from "@/components/records/fields/JsonField.svelte";
@@ -58,7 +59,7 @@
     $: isSuperusersCollection = collection?.name === "_superusers";
 
     $: hasEditorField = !!collection?.fields?.find((f) => f.type === "editor");
-
+    $: hasMarkdownField = !!collection?.fields?.find((f) => f.type === "markdown");
     $: idField = collection?.fields?.find((f) => f.name === "id");
 
     $: hasFileChanges =
@@ -497,6 +498,7 @@
     class="
         record-panel
         {hasEditorField ? 'overlay-panel-xl' : 'overlay-panel-lg'}
+        {hasMarkdownField ? 'overlay-panel-xl' : ''}
         {isAuthCollection && !isSuperusersCollection && !isNew ? 'colored-header' : ''}
     "
     btnClose={!isLoading}
@@ -712,6 +714,8 @@
                     <UrlField {field} {original} {record} bind:value={record[field.name]} />
                 {:else if field.type === "editor"}
                     <EditorField {field} {original} {record} bind:value={record[field.name]} />
+                {:else if field.type === "markdown"}
+                    <MarkdownField {field} {original} {record} bind:value={record[field.name]} />
                 {:else if field.type === "date"}
                     <DateField {field} {original} {record} bind:value={record[field.name]} />
                 {:else if field.type === "select"}
