@@ -10,7 +10,7 @@
     <a href="https://pkg.go.dev/github.com/pocketbase/pocketbase" target="_blank" rel="noopener"><img src="https://godoc.org/github.com/pocketbase/pocketbase?status.svg" alt="Go package documentation" /></a>
 </p>
 
-[PocketBase](https://pocketbase.io) is an open source Go backend that includes:
+[PocketBase-Markdown](https://pocketbase.io) is an open source Go backend that includes:
 
 - embedded database (_SQLite_) with **realtime subscriptions**
 - built-in **files and users management**
@@ -22,6 +22,7 @@
 > [!WARNING]
 > Please keep in mind that PocketBase is still under active development
 > and therefore full backward compatibility is not guaranteed before reaching v1.0.0.
+> This fork will be maintained until Pocketbase decide to add Markdown field + editor to the mainstream
 
 ## API SDK clients
 
