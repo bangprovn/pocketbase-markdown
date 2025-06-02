@@ -16,6 +16,7 @@
 - built-in **files and users management**
 - convenient **Admin dashboard UI**
 - and simple **REST-ish API**
+- forked to add more feature like markdown content and logo changing
 
 **For documentation and examples, please visit https://pocketbase.io/docs.**
 
