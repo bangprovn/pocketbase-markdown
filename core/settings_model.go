@@ -505,7 +505,7 @@ func (c MetaConfig) Validate() error {
 		validation.Field(&c.AppURL, validation.Required, is.URL),
 		validation.Field(&c.SenderName, validation.Required, validation.Length(1, 255)),
 		validation.Field(&c.SenderAddress, is.EmailFormat, validation.Required),
-		validation.Field(&c.LogoURL, is.URL),
+		validation.Field(&c.LogoURL, validation.Required, is.URL),
 	)
 }
 
