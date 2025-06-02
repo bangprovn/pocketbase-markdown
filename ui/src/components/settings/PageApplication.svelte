@@ -202,6 +202,14 @@
                             <input type="text" id={uniqueId} required bind:value={formSettings.meta.appURL} />
                         </Field>
                     </div>
+
+                    <div class="col-lg-6">
+                        <Field class="form-field" name="meta.logoURL" let:uniqueId>
+                            <label for={uniqueId}>Application logo</label>
+                            <input type="text" id={uniqueId} bind:value={formSettings.meta.logoURL} />
+                        </Field>
+                    </div>
+
                     <div class="col-lg-12">
                         <div class="accordions">
                             <TrustedProxyAccordion bind:formSettings {healthData} />

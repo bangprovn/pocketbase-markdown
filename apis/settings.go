@@ -17,6 +17,8 @@ func bindSettingsApi(app core.App, rg *router.RouterGroup[*core.RequestEvent]) {
 	subGroup.POST("/test/s3", settingsTestS3)
 	subGroup.POST("/test/email", settingsTestEmail)
 	subGroup.POST("/apple/generate-client-secret", settingsGenerateAppleClientSecret)
+	// Logo URL should not require auth
+	rg.GET("/logo", settingsLogo)
 }
 
 func settingsList(e *core.RequestEvent) error {
@@ -34,6 +36,10 @@ func settingsList(e *core.RequestEvent) error {
 			return e.JSON(http.StatusOK, e.Settings)
 		})
 	})
+}
+
+func settingsLogo(e *core.RequestEvent) error {
+	return e.JSON(http.StatusOK, e.App.Settings().Meta.LogoURL)
 }
 
 func settingsSet(e *core.RequestEvent) error {

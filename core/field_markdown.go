@@ -152,4 +152,4 @@ func (f *MarkdownField) CalculateMaxBodySize() int64 {
 	}
 
 	return f.MaxSize
-} 
+}

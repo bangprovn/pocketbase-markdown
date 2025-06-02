@@ -148,6 +148,7 @@ func newDefaultSettings() *Settings {
 				HideControls:  false,
 				SenderName:    "Support",
 				SenderAddress: "support@example.com",
+				LogoURL:       "https://pocketbase.io/images/logo.svg",
 			},
 			Logs: LogsConfig{
 				MaxDays: 5,
@@ -494,6 +495,7 @@ type MetaConfig struct {
 	SenderName    string `form:"senderName" json:"senderName"`
 	SenderAddress string `form:"senderAddress" json:"senderAddress"`
 	HideControls  bool   `form:"hideControls" json:"hideControls"`
+	LogoURL       string `form:"logoURL" json:"logoURL"`
 }
 
 // Validate makes MetaConfig validatable by implementing [validation.Validatable] interface.
@@ -503,6 +505,7 @@ func (c MetaConfig) Validate() error {
 		validation.Field(&c.AppURL, validation.Required, is.URL),
 		validation.Field(&c.SenderName, validation.Required, validation.Length(1, 255)),
 		validation.Field(&c.SenderAddress, is.EmailFormat, validation.Required),
+		validation.Field(&c.LogoURL, is.URL),
 	)
 }
 

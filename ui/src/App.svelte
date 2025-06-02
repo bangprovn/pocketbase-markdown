@@ -22,6 +22,8 @@
 
     let isTinyMCEPreloaded = false;
 
+    let logoURL = "";
+
     $: if ($superuser?.id) {
         loadSettings();
     }
@@ -56,6 +58,7 @@
             });
             $appName = settings?.meta?.appName || "";
             $hideControls = !!settings?.meta?.hideControls;
+            logoURL = settings?.meta?.logoURL || import.meta.env.BASE_URL + "images/logo.svg";
         } catch (err) {
             if (!err?.isAbort) {
                 console.warn("Failed to load app settings.", err);
@@ -85,7 +88,7 @@
         <aside class="app-sidebar">
             <a href="/" class="logo logo-sm" use:link>
                 <img
-                    src="{import.meta.env.BASE_URL}images/logo.svg"
+                    src="{logoURL}"
                     alt="PocketBase logo"
                     width="40"
                     height="40"

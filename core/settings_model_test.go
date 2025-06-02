@@ -175,6 +175,7 @@ func TestMetaConfigValidate(t *testing.T) {
 				"appURL",
 				"senderName",
 				"senderAddress",
+				"logoURL",
 			},
 		},
 		{
@@ -184,12 +185,14 @@ func TestMetaConfigValidate(t *testing.T) {
 				AppURL:        "test",
 				SenderName:    strings.Repeat("a", 300),
 				SenderAddress: "invalid_email",
+				LogoURL:       "invalid_url",
 			},
 			[]string{
 				"appName",
 				"appURL",
 				"senderName",
 				"senderAddress",
+				"logoURL",
 			},
 		},
 		{
@@ -199,6 +202,7 @@ func TestMetaConfigValidate(t *testing.T) {
 				AppURL:        "https://example.com",
 				SenderName:    "test",
 				SenderAddress: "test@example.com",
+				LogoURL:       "https://example.com/logo.svg",
 			},
 			[]string{},
 		},
